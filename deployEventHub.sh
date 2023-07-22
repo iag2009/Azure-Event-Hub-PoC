@@ -37,12 +37,14 @@ if [ ! "${AZUREPS_HOST_ENVIRONMENT}" = "cloud-shell/1.0" ]; then
     exit 1;
 fi
 
-# Try and get a token to validate that we're logged into Azure CLI
-aadToken=$(az account get-access-token --resource=https://dev.azureEvent Hub.net --query accessToken --output tsv 2>&1)
+aadToken=$(az account get-access-token --resource=https://eventhubs.azure.net/ --query accessToken --output tsv 2>&1)
 if echo "$aadToken" | grep -q "ERROR"; then
-    echo "ERROR: You don't appear to be logged in to Azure CLI. Please login to the Azure CLI using 'az login'" | tee -a deployEvent Hub.log
+    echo "ERROR: You don't appear to be logged in to Azure CLI. Please login to the Azure CLI using 'az login'" | tee -a deployEventHub.log
     exit 1;
 fi
+
+# The token has been successfully received, now you can use it to access the Event Hubs
+echo "Successfully logged in to Azure CLI and obtained an access token for Azure Event Hubs."
 
 # Get environment details
 azureSubscriptionName=$(az account show --query name --output tsv 2>&1)
