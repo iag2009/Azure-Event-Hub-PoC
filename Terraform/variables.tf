@@ -14,6 +14,15 @@ variable "resource_group_name" {
   description = "Resource Group for all related Azure services."
 }
 
+variable "environment" {
+  description = "Environment can be PoC, test, stage, prod"
+}
+
+variable "project" {
+  description = "Name of Project"
+}
+
+/*
 variable "synapse_sql_pool_name" {
   description = "Name of the SQL pool to create."
 }
@@ -41,3 +50,4 @@ variable "private_endpoint_virtual_network" {
 variable "private_endpoint_virtual_network_subnet" {
   description = "Name of the Subnet within the Virtual Network where you want to create the Private Endpoints."
 }
+*/
