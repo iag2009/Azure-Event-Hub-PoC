@@ -3,7 +3,7 @@ import json
 from azure.eventhub.aio import EventHubProducerClient
 from azure.eventhub import EventData
 
-connection_string = "Endpoint=sb://eventhub-test-120723.servicebus.windows.net/;SharedAccessKeyName=ProgramPolicy;SharedAccessKey=BsfKSwdQ85d/cRndTX+Cjjqxp84T0MsHF+AEhJa29IE=;EntityPath=apphub"
+connection_string = "Endpoint=sb://eventhub-ns-da-poc.servicebus.windows.net/;SharedAccessKeyName=eventhub-poc-policy;SharedAccessKey=TFN8a/0seuwSqLpmwhdMB1lbiVtmUtvji+AEhFx2Xqw=;EntityPath=eventhub1-poc"
 
 async def send_events():
     # Create a producer client to send messages to the event hub.
